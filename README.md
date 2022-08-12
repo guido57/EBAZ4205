@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains the Vivado and PetaLinux projects required to use the Zynq EBAZ4205 Board.
+This repository contains the Vivado and PetaLinux project required to get started with the Zynq EBAZ4205 Board.
 
 
 ## Requirement
@@ -19,12 +19,14 @@ This repository contains the Vivado and PetaLinux projects required to use the Z
 
 ### Software
 
+* Ubuntu 20.04.1 (64 bit)
 * Xilinx Vivado 2021.2
 * Xilinx PetaLinux 2021.2
 
 
 ## How to Build 
 
+* [How to Prepare the SD card](./docs/how-to-prepare-sd-card.md)
 * [How to Build](./docs/how-to-build.md)
 
 
