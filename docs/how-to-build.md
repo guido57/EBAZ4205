@@ -1,6 +1,6 @@
 # How to Build 
 
-## Vivado Project (Optional)
+## Vivado Project
 
 1. Change directory and launch Vivado GUI
 
@@ -46,14 +46,14 @@
     ```
 
 
-## microSD card
+## prepare the microSD card
 
 you need:
-- 12 GB (or more) sd card
+- 32 GB sd card (I used this "big" size but you can also use a smaller one. e.g. 8 GB)
 - fdisk
 - mkfs
 
-```
+```console
 sudo fdisk /dev/sdb
 Welcome to fdisk (util-linux 2.31.1).
 Changes will remain in memory only, until you decide to write them.
@@ -63,13 +63,14 @@ Command (m for help):
 ```
 
 To delete eventual previous partitions in the SD card, do "d" as many time as many previous partitions were present
-```
+
+```console
 Command (m for help): d
 ```
 
 Create two new partitions with "n" command
 
-```
+```console
 Command (m for help): n
 Partition type
 p primary (0 primary, 0 extended, 4 free)
@@ -98,7 +99,7 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
 
-Steps and log for formatting:
+Steps and log for formatting the two partitions:
 
 ```
 $ sudo mkfs.vfat /dev/sdb1
@@ -118,23 +119,46 @@ Creating journal (32768 blocks): done
 Writing superblocks and file system accounting information: done
 ```
 
-SD EXT ROOTFS BOOT:
+Now the SD card should be ready to be loaded with files. Using fdisk it should appear in this way:
+
+```
+Command (m for help): p
+Disk /dev/sdb: 28.87 GiB, 30979129344 bytes, 60506112 sectors
+Disk model: SD/MMC/MS PRO   
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x26e786d8
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/sdb1           2048 21111220 21109173 10.1G 83 Linux
+/dev/sdb2       21112832 60506111 39393280 18.8G 83 Linux
+```
+
+## load files onto the MicroSD card
+
 Mount the fat partition and copy BOOT.BIN, boot.scr, Image, and system.dtb files on it.
-Mount the EXT partition and untar rootfs.tar.gz to it.
-Finally unmount the SD card and use it for booting.
+
+```
+sudo mkdir /mnt/sdb1 
+sudo mount /dev/sdb1 /mnt/sdb1
+```
+
+Copy files (BOOT.BIN boot.scr imange.ub to the boot partition (sdb1)
+
+```
+$ cp BOOT.BIN boot.scr image.ub /mnt/sdb1
+$ sudo umount /dev/sdb1
+```
+
+Unmount the EXT partition and untar rootfs.tar.gz to it.
+
+```console
+$ # Write rootfs. If the second partition is mounted, unmount it before dd command
+$ sudo umount /dev/sdX2
+$ sudo dd if=rootfs.ext4 of=/dev/sdX2
+$ sudo resize2fs /dev/sdX2
+```
 
 
-
-
-1. Copy the files to the first partition and write rootfs to the second partition
-
-    ```console
-    $ # Mount the first partition and copy the files
-    $ sudo mount /dev/sdX1 /path/to/mountpoint
-    $ cp BOOT.BIN boot.scr image.ub /path/to/mountpoint
-    $ sudo umount /path/to/mountpoint
-    $ # Write rootfs. If the second partition is mounted, unmount it before dd command
-    $ sudo umount /dev/sdX2
-    $ sudo dd if=rootfs.ext4 of=/dev/sdX2
-    $ sudo resize2fs /dev/sdX2
-    ```
