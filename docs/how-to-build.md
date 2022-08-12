@@ -53,8 +53,11 @@ you need:
 - fdisk
 - mkfs
 
+From now on, I suppose that the USB card is mapped on /dev/sdb 
+If not, properly change /dev/sdb1 and /dev/sdb2 in the followings 
+
 ```console
-sudo fdisk /dev/sdb
+$sudo fdisk /dev/sdb
 Welcome to fdisk (util-linux 2.31.1).
 Changes will remain in memory only, until you decide to write them.
 Be careful before using the write command.
@@ -101,12 +104,12 @@ Syncing disks.
 
 Steps and log for formatting the two partitions:
 
-```
+```console
 $ sudo mkfs.vfat /dev/sdb1
 mkfs.fat 4.1 (2017-01-24)
 ```
 
-```
+```console
 $ sudo mkfs.ext4 /dev/sdb2
 mke2fs 1.44.1 (24-Mar-2018)
 Creating file system with 5152640 4k blocks and 1289280 inodes
@@ -121,7 +124,7 @@ Writing superblocks and file system accounting information: done
 
 Now the SD card should be ready to be loaded with files. Using fdisk it should appear in this way:
 
-```
+```console
 Command (m for help): p
 Disk /dev/sdb: 28.87 GiB, 30979129344 bytes, 60506112 sectors
 Disk model: SD/MMC/MS PRO   
@@ -140,25 +143,26 @@ Device     Boot    Start      End  Sectors  Size Id Type
 
 Mount the fat partition and copy BOOT.BIN, boot.scr, Image, and system.dtb files on it.
 
-```
+```console
 sudo mkdir /mnt/sdb1 
 sudo mount /dev/sdb1 /mnt/sdb1
 ```
 
 Copy files (BOOT.BIN boot.scr imange.ub to the boot partition (sdb1)
 
-```
+```console
 $ cp BOOT.BIN boot.scr image.ub /mnt/sdb1
 $ sudo umount /dev/sdb1
 ```
 
-Unmount the EXT partition and untar rootfs.tar.gz to it.
+Copy files to the EXT partition by untar rootfs.tar.gz to it.
 
 ```console
 $ # Write rootfs. If the second partition is mounted, unmount it before dd command
-$ sudo umount /dev/sdX2
-$ sudo dd if=rootfs.ext4 of=/dev/sdX2
-$ sudo resize2fs /dev/sdX2
+$ sudo umount /dev/sdb2
+$ sudo dd if=rootfs.ext4 of=/dev/sdb2
+$ sudo resize2fs /dev/sdb2
 ```
 
+### Now the MicroSD is ready to be inserted into the ebaz4205 sd card slot
 
