@@ -96,10 +96,16 @@ Command (m for help): w
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
+```
+
 Steps and log for formatting:
+
+```
 $ sudo mkfs.vfat /dev/sdb1
 mkfs.fat 4.1 (2017-01-24)
+```
 
+```
 $ sudo mkfs.ext4 /dev/sdb2
 mke2fs 1.44.1 (24-Mar-2018)
 Creating file system with 5152640 4k blocks and 1289280 inodes
@@ -110,6 +116,8 @@ Allocating group tables: done
 Writing inode tables: done
 Creating journal (32768 blocks): done
 Writing superblocks and file system accounting information: done
+```
+
 SD EXT ROOTFS BOOT:
 Mount the fat partition and copy BOOT.BIN, boot.scr, Image, and system.dtb files on it.
 Mount the EXT partition and untar rootfs.tar.gz to it.
