@@ -125,6 +125,8 @@ Writing superblocks and file system accounting information: done
 Now the SD card should be ready to be loaded with files. Using fdisk it should appear in this way:
 
 ```console
+$ sudo fdisk /dev/sdb
+
 Command (m for help): p
 Disk /dev/sdb: 28.87 GiB, 30979129344 bytes, 60506112 sectors
 Disk model: SD/MMC/MS PRO   
@@ -144,11 +146,11 @@ Device     Boot    Start      End  Sectors  Size Id Type
 Mount the fat partition and copy BOOT.BIN, boot.scr, Image, and system.dtb files on it.
 
 ```console
-sudo mkdir /mnt/sdb1 
-sudo mount /dev/sdb1 /mnt/sdb1
+$ sudo mkdir /mnt/sdb1 
+$ sudo mount /dev/sdb1 /mnt/sdb1
 ```
 
-Copy files (BOOT.BIN boot.scr imange.ub to the boot partition (sdb1)
+Copy files (BOOT.BIN boot.scr image.ub) to the boot partition (sdb1)
 
 ```console
 $ cp BOOT.BIN boot.scr image.ub /mnt/sdb1
