@@ -27,8 +27,22 @@
 1. Update Hardware Description (Optional)
 
     ```console
+    $ # install libtinfo5 package
+    $ sudo apt-get install libtinfo5
+    
+    $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
+    $ cd /home/guido/Xilinx/Petalinux
+    
+    $ # source the Petalinux settings for this directory so that you can run the Petalinux tools (petalinux-config ...) from here
+    $ source 2022.1/tool/settings.sh
+    
+    $ # create the project. In my case the project name is ebaz4205 
+    $ petalinux-create --type project --template zynq --name ebaz4205 
+    $ # note that a new folder ebaz4205 has been created
+    
     $ # Change to the petalinux project directory
-    $ cd ./linux/ebaz4205
+    $ cd ebaz4205
+    
     $ # Specify the directory where you exported the XSA file
     $ # Exit the configuration without any changes
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
