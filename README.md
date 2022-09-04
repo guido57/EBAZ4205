@@ -17,7 +17,7 @@ This repository contains the Vivado and PetaLinux project required to get starte
   * Mount the tactile switch (S3), the capacitor (C2410) and the resistor (R2641A). The resistor (R2641A) can be shorted instead of mounting a 0 ohm resistor. I used 4.7uF for the capacitor (C2410) (Optional)
 
 
-### Software
+### Software tools
 
 * Ubuntu 20.04.1 (64 bit)
 * Xilinx Vivado 2021.2
@@ -26,6 +26,7 @@ This repository contains the Vivado and PetaLinux project required to get starte
 
 ## How to Build 
 
+* 
 * [How to Prepare the SD card](./docs/how-to-prepare-sd-card.md)
 * [How to Build](./docs/how-to-build.md)
 
