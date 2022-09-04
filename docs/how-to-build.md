@@ -53,10 +53,12 @@
     ```console
     $ # Change to the petalinux project directory
     $ cd ./linux/ebaz4205
+    
     $ # Build
     $ petalinux-build
+    
     $ # Make BOOT.BIN
-    $ ./make_BOOT.BIN.sh
+    $ petalinux-package --boot --force --fsbl ./images/linux/zynq_fsbl.elf --fpga ./project-spec/hw-description/ebaz4205_wrapper.bit --u-boot
     ```
 
 
