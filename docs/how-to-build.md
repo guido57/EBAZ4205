@@ -73,6 +73,10 @@ From now on, I suppose that the USB card is mapped on /dev/sdb
 If not, properly change /dev/sdb1 and /dev/sdb2 in the followings 
 
 ```console
+$ # unmount the sd card if it were auto mounted (eventually) 
+$sudo umount /dev/sdb1
+$sudo umount /dev/sdb2
+
 $sudo fdisk /dev/sdb
 Welcome to fdisk (util-linux 2.31.1).
 Changes will remain in memory only, until you decide to write them.
@@ -169,7 +173,7 @@ $ sudo mount /dev/sdb1 /mnt/sdb1
 Copy files (BOOT.BIN boot.scr image.ub) to the boot partition (sdb1)
 
 ```console
-$ cp BOOT.BIN boot.scr image.ub /mnt/sdb1
+$ sudo cp BOOT.BIN boot.scr image.ub /mnt/sdb1
 $ sudo umount /dev/sdb1
 ```
 
@@ -178,7 +182,8 @@ Copy files to the EXT partition by untar rootfs.tar.gz to it.
 ```console
 $ # Write rootfs. If the second partition is mounted, unmount it before dd command
 $ sudo umount /dev/sdb2
-$ sudo dd if=rootfs.ext4 of=/dev/sdb2
+$ # dd can take some time. In my Ubuntu Virtualbox on i7 10750 took 290 seconds to copy a 24MBytes rootfs.ext (which became 67 MBytes expanded on disk) 
+$ sudo dd if=rootfs.ext4 of=/dev/sdb2 status=progress
 $ sudo resize2fs /dev/sdb2
 ```
 
