@@ -48,6 +48,9 @@
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
     ```
 
+1. (TODO) Modify system-user.dtsi to force where to mount the root filesystem
+
+
 1. Build Linux
 
     ```console
@@ -63,6 +66,8 @@
 
 
 ## prepare the microSD card
+## (TODO: use the .wic sd image)
+
 
 you need:
 - 32 GB sd card (I used this "big" size but you can also use a smaller one. e.g. 8 GB)
