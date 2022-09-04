@@ -26,9 +26,8 @@ This repository contains the Vivado and PetaLinux project required to get starte
 
 ## How to Build 
 
-* 
-* [How to Prepare the SD card](./docs/how-to-prepare-sd-card.md)
-* [How to Build](./docs/how-to-build.md)
+* Create the block design, the bitstream and the hardware definition with Vivado
+* [Use the hardware definition to build an bootable SD Card with petalinux](./docs/how-to-build.md)
 
 
 ## Demo Application
