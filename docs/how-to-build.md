@@ -2,18 +2,7 @@
 
 ## Vivado Project
 
-1. Change directory and launch Vivado GUI
-
-    ```console
-    $ cd ./vivado
-    $ vivado
-    ```
-
-1. Run the following command in the Tcl console to create a Vivado project and generate a block design
-
-    ```
-    source ./ebaz4205.tcl
-    ```
+1. Launch Vivado 2021.2, click Tools/Run Tcl scripts and select ebaz4205.tcl
 
 1. Generate Bitstream from Flow Navigator
 
@@ -24,17 +13,20 @@
 
 ## PetaLinux Project
 
-1. Update Hardware Description (Optional)
+1. Create and config the PetaLinux project
 
+    Only the first time, install libtinfo5
     ```console
     $ # install libtinfo5 package
     $ sudo apt-get install libtinfo5
-    
-    $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
+   ```
+   
+   ```console
+        $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
     $ cd /home/guido/Xilinx/Petalinux
     
     $ # source the Petalinux settings for this directory so that you can run the Petalinux tools (petalinux-config ...) from here
-    $ source 2022.1/tool/settings.sh
+    $ source 2021.2/settings.sh
     
     $ # create the project. In my case the project name is ebaz4205 
     $ petalinux-create --type project --template zynq --name ebaz4205 
@@ -48,10 +40,7 @@
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
     ```
 
-1. (TODO) Modify system-user.dtsi to force where to mount the root filesystem
-
-
-1. Build Linux
+1. Build Linux and create the sd image
 
     ```console
     $ # Change to the petalinux project directory
@@ -62,11 +51,15 @@
     
     $ # Make BOOT.BIN
     $ petalinux-package --boot --force --fsbl ./images/linux/zynq_fsbl.elf --fpga ./project-spec/hw-description/ebaz4205_wrapper.bit --u-boot
-    ```
+```
 
+I strongly "suggest to create a .wic sd card image file to flash it directly to the sd card with BalenaEtcher or similar
+```console
+$ # generate a .wic file 
+    $ petalinux-package --wic
+```
 
-## prepare the microSD card
-## (TODO: use the .wic sd image)
+## If you don't like the .wic file, you can optionally prepare the microSD card and load files on it (not suggested!)
 
 
 you need:
