@@ -53,13 +53,14 @@
     $ petalinux-package --boot --force --fsbl ./images/linux/zynq_fsbl.elf --fpga ./project-spec/hw-description/ebaz4205_wrapper.bit --u-boot
 ```
 
-I strongly "suggest to create a .wic sd card image file to flash it directly to the sd card with BalenaEtcher or similar
+I strongly "suggest" to create a .wic sd card image file to flash it directly to the sd card with BalenaEtcher or similar
+
 ```console
 $ # generate a .wic file 
     $ petalinux-package --wic
 ```
 
-## If you don't like the .wic file, you can optionally prepare the microSD card and load files on it (not suggested!)
+## If you don't like the .wic file, you can manually prepare the microSD card and load files on it (not suggested!)
 
 
 you need:
