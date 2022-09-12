@@ -40,6 +40,30 @@
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
     ```
 
+1. Modify the project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+
+I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
+
+```
+No filesystem could mount root, tried:
+ ext3
+ ext2
+ ext4
+ vfat
+ msdos
+
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0)
+```
+
+Your system-conf.dtsi should look like this:
+
+```
+/include/ "system-conf.dtsi"
+/ {
+bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
+};
+  ```
+
 1. Build Linux and create the sd image
 
     ```console
