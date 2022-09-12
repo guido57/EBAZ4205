@@ -13,16 +13,15 @@
 
 ## PetaLinux Project
 
-1. Create and config the PetaLinux project
-
-    Only the first time, install libtinfo5
+1. Only the first time, install libtinfo5
     
     ```console
     $ # install libtinfo5 package
     $ sudo apt-get install libtinfo5
    ```
-   then
-   
+
+1. Create and config the PetaLinux project
+
    ```console
     $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
     $ cd /home/guido/Xilinx/Petalinux
@@ -46,27 +45,27 @@
 
 I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
 
-```
-No filesystem could mount root, tried:
- ext3
- ext2
- ext4
- vfat
- msdos
+    ```
+    No filesystem could mount root, tried:
+     ext3
+     ext2
+     ext4
+     vfat
+     msdos
 
-Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0)
-```
+    Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0)
+    ```
 
 Your project-spec/meta-user/recipes-bsp/device-tree/files/system-conf.dtsi should look like this:
 
-```
-/include/ "system-conf.dtsi"
-/ {
-    chosen {
-        bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
+    ```
+    /include/ "system-conf.dtsi"
+    / {
+        chosen {
+            bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
+        };
     };
-};
-  ```
+    ```
 
 1. Build Linux and create the sd image
 
@@ -79,7 +78,7 @@ Your project-spec/meta-user/recipes-bsp/device-tree/files/system-conf.dtsi shoul
     
     $ # Make BOOT.BIN
     $ petalinux-package --boot --force --fsbl ./images/linux/zynq_fsbl.elf --fpga ./project-spec/hw-description/ebaz4205_wrapper.bit --u-boot
-```
+    ```
 
 I strongly "suggest" to create a .wic sd card image file to flash it directly to the sd card with BalenaEtcher or similar
 
