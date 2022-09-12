@@ -16,13 +16,15 @@
 1. Create and config the PetaLinux project
 
     Only the first time, install libtinfo5
+    
     ```console
     $ # install libtinfo5 package
     $ sudo apt-get install libtinfo5
    ```
+   then
    
    ```console
-        $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
+    $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
     $ cd /home/guido/Xilinx/Petalinux
     
     $ # source the Petalinux settings for this directory so that you can run the Petalinux tools (petalinux-config ...) from here
@@ -40,7 +42,7 @@
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
     ```
 
-1. Modify the project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+1. Modify the system-user.dtsi to specify 
 
 I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
 
@@ -55,7 +57,7 @@ No filesystem could mount root, tried:
 Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0)
 ```
 
-Your system-conf.dtsi should look like this:
+Your project-spec/meta-user/recipes-bsp/device-tree/files/system-conf.dtsi should look like this:
 
 ```
 /include/ "system-conf.dtsi"
