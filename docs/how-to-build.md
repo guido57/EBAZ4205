@@ -60,7 +60,9 @@ Your system-conf.dtsi should look like this:
 ```
 /include/ "system-conf.dtsi"
 / {
-bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
+    chosen {
+        bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
+    };
 };
   ```
 
