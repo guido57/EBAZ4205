@@ -100,5 +100,9 @@ As many times as necessary
     
     Otherwise, [manually prepare the SD card](https://github.com/guido57/EBAZ4205/blob/master/docs/prepare%20SD.md)
 
-### Now the MicroSD is ready to be inserted into the ebaz4205 sd card slot
+1. Test the MicroSD just created
 
+- Connect an USB port of your PC to the EBAZ405 board serial port using a USB to serial converter
+- Run a serial terminal on your PC (e.g. putty) 
+- Insert the MicroSD into the ebaz4205 sd card slot and turn on the EBAZ4205 board
+- 
