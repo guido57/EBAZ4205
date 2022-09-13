@@ -134,6 +134,7 @@ Creates a new partition 1 of type 'Linux' and of size 10.1 GB. Partition #1 cont
 Do you want to remove the signature? [Y]es/[N]o: y
 The signature will be removed by a write command.
 
+
 Command (m for help): n
 Partition type
 p primary (1 primary, 0 extended, 3 free)
