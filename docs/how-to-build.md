@@ -27,7 +27,8 @@
     $ cd /home/guido/Xilinx/Petalinux
     
     $ # source the Petalinux settings for this directory so that you can run the Petalinux tools (petalinux-config ...) from here
-    $ source 2021.2/settings.sh
+    $ source 2021.2/settings.sh 
+    # source 2022.1/tool/settings.sh
     
     $ # create the project. In my case the project name is ebaz4205 
     $ petalinux-create --type project --template zynq --name ebaz4205 
