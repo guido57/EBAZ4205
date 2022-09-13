@@ -1,6 +1,16 @@
 # How to Build 
 
-## Vivado Project
+## Overview
+
+Only Once
+1. Basic Vivado Project. Create a basic Vivado project and get the Bitstream (PL configuration) and exported hardware from it
+1. Petalinux Project. Create a SD card with Linux, based on that exported hardware
+
+As many times as necessary
+1. Add/Modify IPs and Ports to the Vivado project and get the Bitstream from it
+1. Load the new Bitstream from Linux
+
+## Basic Vivado Project
 
 1. Launch Vivado 2021.2, click Tools/Run Tcl scripts and select ebaz4205.tcl
 
