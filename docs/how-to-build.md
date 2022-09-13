@@ -60,16 +60,14 @@
 Your project-spec/meta-user/recipes-bsp/device-tree/files/system-conf.dtsi should look like this:
 
 
-    ```
-    
+```
     /include/ "system-conf.dtsi"
     / {
         chosen {
             bootargs = "earlycon console=ttyPS1,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
         };
     };
-    
-    ```
+```
 
 1. Build Linux and create the sd image
 
