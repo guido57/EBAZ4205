@@ -44,7 +44,7 @@
 
 1. Modify the system-user.dtsi to specify 
 
-I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
+    I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
 
     ```
     No filesystem could mount root, tried:
@@ -81,12 +81,12 @@ Your project-spec/meta-user/recipes-bsp/device-tree/files/system-conf.dtsi shoul
     $ petalinux-package --boot --force --fsbl ./images/linux/zynq_fsbl.elf --fpga ./project-spec/hw-description/ebaz4205_wrapper.bit --u-boot
     ```
 
-I strongly "suggest" to create a .wic sd card image file to flash it directly to the sd card with BalenaEtcher or similar
+    I strongly "suggest" to create a .wic sd card image file to flash it directly to the sd card with BalenaEtcher or similar
 
-```console
-$ # generate a .wic file 
-    $ petalinux-package --wic
-```
+    ```console
+    $ # generate a .wic file 
+        $ petalinux-package --wic
+    ```
 
 ## If you don't like the .wic file, you can manually prepare the microSD card and load files on it (not suggested!)
 
