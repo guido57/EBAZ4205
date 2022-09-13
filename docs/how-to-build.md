@@ -97,8 +97,8 @@ As many times as necessary
     $ # generate a .wic file 
         $ petalinux-package --wic
     ```
-
-
+    
+    Otherwise, [manulll prepare the SD card] (https://github.com/guido57/EBAZ4205/blob/master/docs/prepare%20SD.md)
 
 ### Now the MicroSD is ready to be inserted into the ebaz4205 sd card slot
 
