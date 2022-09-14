@@ -1,7 +1,7 @@
 # How to Build 
 
 ## Overview
-
+ 
 Only Once
 1. Basic Vivado Project. Create a basic Vivado project and get the Bitstream (PL configuration) and exported hardware from it
 1. Petalinux Project. Create a SD card with Linux, based on that exported hardware
