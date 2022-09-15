@@ -35,20 +35,7 @@ This repository contains the Vivado and the instructions required to get started
 
 ### EBAZ4205
 
-* [xjtuecho/EBAZ4205: A 5$ Xilinx ZYNQ development board.](https://github.com/xjtuecho/EBAZ4205)
-  * First setup
-  * Schematics
-  * Xilinx Design Constraints
-  * mtd information
-* [Leungfung/ebaz4205_hw](https://github.com/Leungfung/ebaz4205_hw)
-  * Document (Block desgin)
-* [kan573 - Qiita](https://qiita.com/kan573)
-  * Articles in Japanese
-* [blkf2016/ebaz4205: Some resources for the ebaz4205 board](https://github.com/blkf2016/ebaz4205)
-  * Sample project
-* [nightseas/ebit_z7010: The base reference design for EBIT EBAZ4205 Zynq7010 board.](https://github.com/nightseas/ebit_z7010)
-  * Sample project
-
+* [KeitetsuWorks EBAZ4205](https://github.com/KeitetsuWorks/EBAZ4205)
 
 ### Xilinx
 
