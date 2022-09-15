@@ -2,8 +2,14 @@
 
 ## Description
 
-This repository contains the Vivado and the instructions required to get started with the Zynq EBAZ4205 Board.
-
+This repository contains the Vivado project and the instructions required to get started with the Zynq EBAZ4205 Board.
+The result will be an EBAZ4205:
+* loading from the SD Card
+* running Linux (PetaLinux):
+    * connected to a local network via Ethernet (IP obtained by DHCP)
+    * with a serial console connected to the J7 connector of EBAZ4205 (serial)
+    * with a SSH server connectable with any SSH client and/or WinSCP  
+    * any application running on a linux console
 
 ## Requirement
 
