@@ -23,7 +23,7 @@ As many times as necessary
 
 ## PetaLinux Project
 
-###1. Only the first time, install libtinfo5
+### 1. Only the first time, install libtinfo5
     
     ```console
     $ # install libtinfo5 package
