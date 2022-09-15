@@ -19,10 +19,10 @@ This repository contains the Vivado and the instructions required to get started
 
 ### Software tools
 
-* Ubuntu 20.04.1 (64 bit) running on VirtualBox 6.1  
-* Xilinx Vivado 2021.2
-* Xilinx PetaLinux 2021.2
-
+* Vivado 2021.2 on Windows 10 or 11
+* VMWare VirtualBox 6.1 on Windows 10 or 11
+* Ubuntu 20.04.1 on VMWare VirtualBox 6.1
+* Petalinux 2021.2 on Ubuntu 20.04.1
 
 ## How to Build 
 
