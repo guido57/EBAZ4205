@@ -32,6 +32,7 @@ As many times as necessary
 
 ### 1. Create and config the PetaLinux project
 
+
    ```console
     $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
     $ cd /home/guido/Xilinx/Petalinux
