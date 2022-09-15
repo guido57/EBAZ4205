@@ -23,7 +23,7 @@ As many times as necessary
 
 ## PetaLinux Project
 
-1. Only the first time, install libtinfo5
+###1. Only the first time, install libtinfo5
     
     ```console
     $ # install libtinfo5 package
@@ -52,7 +52,7 @@ As many times as necessary
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
     ```
 
-1. Modify the system-user.dtsi to specify 
+1. Modify the system-user.dtsi to specify the root partition
 
     I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
 
