@@ -2,11 +2,11 @@
 
 ## Overview
  
-Only Once
+### Only Once: described here!
 1. Basic Vivado Project. Create a basic Vivado project and get the Bitstream (PL configuration) and exported hardware from it
 1. Petalinux Project. Create a SD card with Linux, based on that exported hardware
 
-As many times as necessary
+### As many times as necessary: not described here!
 1. Add/Modify IPs and Ports to the Vivado project and get the Bitstream from it
 1. Load the new Bitstream from Linux
 
