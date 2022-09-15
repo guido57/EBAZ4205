@@ -105,4 +105,46 @@ As many times as necessary
 - Connect an USB port of your PC to the EBAZ405 board serial port using a USB to serial converter
 - Run a serial terminal on your PC (e.g. putty) 
 - Insert the MicroSD into the ebaz4205 sd card slot and turn on the EBAZ4205 board
-- 
+- You shold see something like this:
+
+```
+U-Boot 2022.01 (Apr 04 2022 - 07:53:54 +0000)
+
+CPU:   Zynq 7z010
+Silicon: v3.1
+DRAM:  ECC disabled 256 MiB
+Flash: 0 Bytes
+NAND:  0 MiB
+MMC:   mmc@e0100000: 0
+Loading Environment from FAT... *** Error - No Valid Environment Area found
+*** Warning - bad env area, using default environment
+
+In:    serial@e0001000
+Out:   serial@e0001000
+Err:   serial@e0001000
+Net:
+ZYNQ GEM: e000b000, mdio bus e000b000, phyaddr -1, interface gmii
+eth0: ethernet@e000b000
+Hit any key to stop autoboot:  0
+switch to partitions #0, OK
+mmc0 is current device
+Scanning mmc 0:1...
+Found U-Boot script /boot.scr
+2776 bytes read in 12 ms (225.6 KiB/s)
+## Executing script at 03000000
+Trying to load boot images from mmc0
+4533920 bytes read in 394 ms (11 MiB/s)
+## Booting kernel from Legacy Image at 00200000 ...
+   Image Name:   Linux-5.15.19-xilinx-v2022.1
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    4533856 Bytes = 4.3 MiB
+   Load Address: 00200000
+   Entry Point:  00200000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 00100000
+   Booting using the fdt blob at 0x100000
+   Loading Kernel Image
+   Loading Device Tree to 0ead4000, end 0eadb7d9 ... OK
+
+Starting kernel ...
+```
