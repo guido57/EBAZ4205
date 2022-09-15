@@ -10,6 +10,12 @@
 1. Add/Modify IPs and Ports to the Vivado project and get the Bitstream from it
 1. Load the new Bitstream from Linux
 
+#### Before going on, go to the Xilinx website and download and install:
+* Vivado 2021.2 on Windows 10 or 11
+* VMWare VirtualBox 6.1 on Windows 10 or 11
+* Ubuntu 20.04.1 on VMWare VirtualBox 6.1
+* Petalinux 2021.2 on Ubuntu 20.04.1
+
 ## Basic Vivado Project
 
 1. Launch Vivado 2021.2, click Tools/Run Tcl scripts and select ebaz4205.tcl
