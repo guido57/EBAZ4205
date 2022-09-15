@@ -23,14 +23,14 @@ As many times as necessary
 
 ## PetaLinux Project
 
-### 1. Only the first time, install libtinfo5
+1. Only the first time, install libtinfo5
     
-    ```console
-    $ # install libtinfo5 package
-    $ sudo apt-get install libtinfo5
-   ```
+```console
+$ # install libtinfo5 package
+$ sudo apt-get install libtinfo5
+```
 
-### 1. Create and config the PetaLinux project
+1. Create and config the PetaLinux project
 
 
    ```console
