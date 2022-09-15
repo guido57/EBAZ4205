@@ -32,8 +32,7 @@ $ sudo apt-get install libtinfo5
 
 1. Create and config the PetaLinux project
 
-
-   ```console
+```console
     $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
     $ cd /home/guido/Xilinx/Petalinux
     
@@ -51,7 +50,7 @@ $ sudo apt-get install libtinfo5
     $ # Specify the directory where you exported the XSA file
     $ # Exit the configuration without any changes
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
-    ```
+ ```
 
 1. Modify the system-user.dtsi to specify the root partition
 
