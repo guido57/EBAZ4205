@@ -30,7 +30,7 @@ As many times as necessary
     $ sudo apt-get install libtinfo5
    ```
 
-1. Create and config the PetaLinux project
+#### 1. Create and config the PetaLinux project
 
    ```console
     $ # Change to the petalinux project directories container. In my case /home/guido/Xilinx/Petalinux
