@@ -97,7 +97,7 @@
 
     ```console
     $ # generate a .wic file 
-        $ petalinux-package --wic
+    $ petalinux-package --wic
     ```
     
     Otherwise, [manually prepare the SD card](https://github.com/guido57/EBAZ4205/blob/master/docs/prepare%20SD.md)
