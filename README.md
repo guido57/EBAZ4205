@@ -39,6 +39,10 @@ The result will be an EBAZ4205:
 
 ## References
 
+### My Hackaday projects with EBAZ4205
+[Cheap (35$) and powerful FPGA programming](https://hackaday.io/project/187351-cheap-35-and-powerful-fpga-programming)
+[30Mhz spectrum and sdr in a FPGA](https://hackaday.io/project/186329-30mhz-spectrum-and-sdr-in-a-fpga)
+
 ### EBAZ4205
 
 * [KeitetsuWorks EBAZ4205](https://github.com/KeitetsuWorks/EBAZ4205)
