@@ -31,7 +31,7 @@ The result will be an EBAZ4205:
 * Petalinux 2021.2 on Ubuntu 20.04.1
 
 ## How to Build 
-
+* Read carefully my Hackaday Project: [Cheap (35$) and powerful FPGA programming](https://hackaday.io/project/187351-cheap-35-and-powerful-fpga-programming)
 * Create the block design, the bitstream and the hardware definition with Vivado
 * [Use the hardware definition to build an bootable SD Card with petalinux and test it on EBAZ4205](./docs/how-to-build.md)
 
