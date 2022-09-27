@@ -41,7 +41,7 @@ The result will be an EBAZ4205:
 
 ### My Hackaday projects with EBAZ4205
 * [Cheap (35$) and powerful FPGA programming](https://hackaday.io/project/187351-cheap-35-and-powerful-fpga-programming)
-* [30Mhz spectrum and sdr in a FPGA](https://hackaday.io/project/186329-30mhz-spectrum-and-sdr-in-a-fpga)
+* [30Mhz spectrum and SDR in a FPGA](https://hackaday.io/project/186329-30mhz-spectrum-and-sdr-in-a-fpga)
 
 ### EBAZ4205
 
