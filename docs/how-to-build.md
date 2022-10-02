@@ -101,6 +101,16 @@
     ```
     
     Otherwise, [manually prepare the SD card](https://github.com/guido57/EBAZ4205/blob/master/docs/prepare%20SD.md)
+    
+1. Generate the SDK folder and files
+   
+   The following command will generate a folder /home/guido/Xilinx/EBAZ4205/images/linux/sdk with all the files of the target root filesystem.
+   This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. In fact most of the include and library files    necessary to cross compile and build are here. E.g. 
+   
+   ```console
+    $ # Build the sdk folder and files
+    $ petalinux-build --sdk
+    ``` 
 
 1. Test the MicroSD just created
 
