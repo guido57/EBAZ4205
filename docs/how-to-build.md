@@ -105,11 +105,13 @@
 1. Generate the SDK folder and files
    
    The following command will generate a folder ./images/linux/sdk with all the files of the target root filesystem.
-   This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. In fact most of the include and library files    necessary to cross compile and build are here. E.g. 
+   This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. In fact most of the include and library files necessary to cross compile and build are here. E.g. axidma.h
    
    ```console
     $ # Build the sdk folder and files
     $ petalinux-build --sdk
+    $ cd ./images/linux/ebaz4205/images/linux
+    ./sdk.sh ./sdk
     ``` 
 
 1. Test the MicroSD just created
