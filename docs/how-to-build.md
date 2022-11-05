@@ -69,7 +69,7 @@
     Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0)
     ```
 
-    Your project-spec/meta-user/recipes-bsp/device-tree/files/system-conf.dtsi should look like this:
+    Your project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi should look like this:
 
     ```
         /include/ "system-conf.dtsi"
