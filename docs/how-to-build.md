@@ -54,6 +54,22 @@
     $ petalinux-config --get-hw-description=../../vivado/ebaz4205
     ```
 
+1. Include the package libstdc that is mandatory to debug your program with Vitis. Otherwise, while you'll be tryig to debug with Vitis you will obtain:
+
+```
+error while loading shared libraries: libstdc++.so.6
+```
+
+To include the package libstdc, run:
+
+```console
+petalinux-config -c rootfs
+```
+then select: Filesystem Packages -> misc -> gcc-runtime -> libstdc
+
+Finally: Save and Exit
+
+
 1. Modify the system-user.dtsi to specify the root partition
 
     I read that this step is optional but in my environment is mandatory because, without it, when booting from the sd card, I got:
@@ -79,17 +95,6 @@
             };
         };
     ```
-
-1. Include the package libstdc.so that is mandatory to debug your program with Vitis
-
-```console
-petalinux-config -c rootfs
-```
-then select
-
-Filesystem Packages -> misc -> gcc-runtime -> libstdc
-
-Save and Exit
 
 
 1. Build Linux and create the sd image
