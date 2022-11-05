@@ -80,6 +80,18 @@
         };
     ```
 
+1. Include the package libstdc.so that is mandatory to debug your program with Vitis
+
+```console
+petalinux-config -c rootfs
+```
+then select
+
+Filesystem Packages -> misc -> gcc-runtime -> libstdc
+
+Save and Exit
+
+
 1. Build Linux and create the sd image
 
     ```console
