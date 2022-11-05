@@ -56,18 +56,18 @@
 
 1. Include the package libstdc that is mandatory to debug your program with Vitis. Otherwise, while you'll be tryig to debug with Vitis you will obtain:
 
-```
-error while loading shared libraries: libstdc++.so.6
-```
+    ```
+    error while loading shared libraries: libstdc++.so.6
+    ```
 
-To include the package libstdc, run:
+    To include the package libstdc, run:
 
-```console
-petalinux-config -c rootfs
-```
-then select: Filesystem Packages -> misc -> gcc-runtime -> libstdc
+    ```console
+    petalinux-config -c rootfs
+    ```
+    then select: Filesystem Packages -> misc -> gcc-runtime -> libstdc
 
-Finally: Save and Exit
+    Finally: Save and Exit
 
 
 1. Modify the system-user.dtsi to specify the root partition
