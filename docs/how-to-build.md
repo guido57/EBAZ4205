@@ -91,7 +91,7 @@
         /include/ "system-conf.dtsi"
         / {
             chosen {
-                bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=512M ";
+                bootargs = "earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait cma=256M ";
             };
         };
     ```
