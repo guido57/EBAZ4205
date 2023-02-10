@@ -148,7 +148,7 @@
     $ # Build the sdk folder and files
     $ petalinux-build --sdk
     $ cd ./images/linux/ebaz4205/images/linux
-    ./sdk.sh ./sdk
+    ./sdk.sh -d ./sdk
     ``` 
 
 1. Test the MicroSD just created
