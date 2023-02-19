@@ -126,12 +126,13 @@
    * others
 
    Steps to generate the SDK folder and files:
+   
    * create the directory:
       <petalinux project folder>/project-spec/meta-user/recipes-qt/qt5
 
    * place these two files in the just created directory: 
-      qt3d_%.bbappend
-
+   
+   qt3d_%.bbappend
    ```
    SRC_URI = "git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.15;protocol=git"
 
@@ -140,7 +141,6 @@
    ```
 
    qtserialbus_%.bbappend 
-
    ```
    SRC_URI = "git://code.qt.io/qt/qtserialbus.git;name=qt3d;branch=5.15;protocol=git"
 
@@ -151,7 +151,6 @@
    * in a shell:
 
    ```console
-           
    $ # Build the sdk folder and files
    $ petalinux-build --sdk
    $ cd ./images/linux/ebaz4205/images/linux
