@@ -128,11 +128,9 @@
    Steps to generate the SDK folder and files:
 
        * create the directory:
-
           <petalinux project folder>/project-spec/meta-user/recipes-qt/qt5
 
        * place these two files in the just created directory: 
-
            qt3d_%.bbappend
 
            ```
@@ -149,7 +147,7 @@
            SRCREV = "d3394c81f10e5d5c40663e88e185335549e4bc12"
            ```
 
-       * in the console:
+       * in a shell:
 
            ```console
             $ # Build the sdk folder and files
