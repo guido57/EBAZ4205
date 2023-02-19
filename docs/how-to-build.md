@@ -119,42 +119,44 @@
     
 1. Generate the SDK folder and files
 
-This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. It will generate a folder ./images/linux/sdk with all the files of the target root filesystem:
-* include and library files necessary to cross compile and build are here (e.g. axidma.h) 
-* specific compiler and debugger
-* the "environment" to source for cross compiling
-* ...
+   This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. It will generate a folder ./images/linux/sdk with all the files of the target root filesystem:
+   * include and library files necessary to cross compile and build are here (e.g. axidma.h) 
+   * specific compiler and debugger
+   * the "environment" to source for cross compiling
+   * others
 
-Steps to generate the SDK folder and files:
+   Steps to generate the SDK folder and files:
 
-    * create the directory:
-    
-       <petalinux project folder>/project-spec/meta-user/recipes-qt/qt5
+       * create the directory:
 
-    * place these two files in the just created directory: 
- 
-        qt3d_%.bbappend
-        ```
-        SRC_URI = "git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.15;protocol=git"
+          <petalinux project folder>/project-spec/meta-user/recipes-qt/qt5
 
-        SRCREV = "92853c6e1aa95dfb7d605959ff44ccc124fbd62c"
-        ```
+       * place these two files in the just created directory: 
 
-        qtserialbus_%.bbappend 
- 
-        ```
-        SRC_URI = "git://code.qt.io/qt/qtserialbus.git;name=qt3d;branch=5.15;protocol=git"
+           qt3d_%.bbappend
 
-        SRCREV = "d3394c81f10e5d5c40663e88e185335549e4bc12"
-        ```
-    * in the console:
+           ```
+           SRC_URI = "git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.15;protocol=git"
 
-        ```console
-         $ # Build the sdk folder and files
-         $ petalinux-build --sdk
-         $ cd ./images/linux/ebaz4205/images/linux
-         ./sdk.sh -d ./sdk
-         ``` 
+           SRCREV = "92853c6e1aa95dfb7d605959ff44ccc124fbd62c"
+           ```
+
+           qtserialbus_%.bbappend 
+
+           ```
+           SRC_URI = "git://code.qt.io/qt/qtserialbus.git;name=qt3d;branch=5.15;protocol=git"
+
+           SRCREV = "d3394c81f10e5d5c40663e88e185335549e4bc12"
+           ```
+
+       * in the console:
+
+           ```console
+            $ # Build the sdk folder and files
+            $ petalinux-build --sdk
+            $ cd ./images/linux/ebaz4205/images/linux
+            ./sdk.sh -d ./sdk
+            ``` 
 
 1. Test the MicroSD just created
 
