@@ -137,6 +137,7 @@
            SRC_URI = "git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.15;protocol=git"
 
            SRCREV = "92853c6e1aa95dfb7d605959ff44ccc124fbd62c"
+           
            ```
 
            qtserialbus_%.bbappend 
@@ -145,16 +146,19 @@
            SRC_URI = "git://code.qt.io/qt/qtserialbus.git;name=qt3d;branch=5.15;protocol=git"
 
            SRCREV = "d3394c81f10e5d5c40663e88e185335549e4bc12"
+           
            ```
 
        * in a shell:
 
            ```console
+           
             $ # Build the sdk folder and files
             $ petalinux-build --sdk
             $ cd ./images/linux/ebaz4205/images/linux
             ./sdk.sh -d ./sdk
-            ``` 
+           
+           ``` 
 
 1. Test the MicroSD just created
 
