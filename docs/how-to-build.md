@@ -95,28 +95,6 @@
             };
         };
     ```
-1. (Optional). If you want to build QT5 for PetaLinux SDK (petalinux-build -s) you must also:
-
-    * create the directory:
-    <petalinux project folder>/project-spec/meta-user/recipes-qt/qt5
-
-    * place these two files in the just created directory: 
- 
-        qt3d_%.bbappend
-        ```
-        SRC_URI = "git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.15;protocol=git"
-
-        SRCREV = "92853c6e1aa95dfb7d605959ff44ccc124fbd62c"
-        ```
-
-        qtserialbus_%.bbappend 
- 
-        ```
-        SRC_URI = "git://code.qt.io/qt/qtserialbus.git;name=qt3d;branch=5.15;protocol=git"
-
-        SRCREV = "d3394c81f10e5d5c40663e88e185335549e4bc12"
-        ```
-
 1. Build Linux and create the sd image
 
     ```console
@@ -140,16 +118,43 @@
     Otherwise, [manually prepare the SD card](https://github.com/guido57/EBAZ4205/blob/master/docs/prepare%20SD.md)
     
 1. Generate the SDK folder and files
-   
-   The following command will generate a folder ./images/linux/sdk with all the files of the target root filesystem.
-   This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. In fact most of the include and library files necessary to cross compile and build are here. E.g. axidma.h
-   
-   ```console
-    $ # Build the sdk folder and files
-    $ petalinux-build --sdk
-    $ cd ./images/linux/ebaz4205/images/linux
-    ./sdk.sh -d ./sdk
-    ``` 
+
+This is mandatory if you want to develop, cross compile and debug linux apps with Vitis. It will generate a folder ./images/linux/sdk with all the files of the target root filesystem:
+* include and library files necessary to cross compile and build are here (e.g. axidma.h) 
+* specific compiler and debugger
+* the "environment" to source for cross compiling
+* ...
+
+Steps to generate the SDK folder and files:
+
+    * create the directory:
+    
+       <petalinux project folder>/project-spec/meta-user/recipes-qt/qt5
+
+    * place these two files in the just created directory: 
+ 
+        qt3d_%.bbappend
+        ```
+        SRC_URI = "git://code.qt.io/qt/qt3d.git;name=qt3d;branch=5.15;protocol=git"
+
+        SRCREV = "92853c6e1aa95dfb7d605959ff44ccc124fbd62c"
+        ```
+
+        qtserialbus_%.bbappend 
+ 
+        ```
+        SRC_URI = "git://code.qt.io/qt/qtserialbus.git;name=qt3d;branch=5.15;protocol=git"
+
+        SRCREV = "d3394c81f10e5d5c40663e88e185335549e4bc12"
+        ```
+    * in the console:
+
+        ```console
+         $ # Build the sdk folder and files
+         $ petalinux-build --sdk
+         $ cd ./images/linux/ebaz4205/images/linux
+         ./sdk.sh -d ./sdk
+         ``` 
 
 1. Test the MicroSD just created
 
