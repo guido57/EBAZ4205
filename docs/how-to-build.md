@@ -153,7 +153,7 @@
    ```console
    $ # Build the sdk folder and files
    $ petalinux-build --sdk
-   $ cd ./images/linux/ebaz4205/images/linux
+   $ cd images/linux
    ./sdk.sh -d ./sdk
            
    ``` 
